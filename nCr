@@ -1,0 +1,44 @@
+
+#include <iostream>
+
+using namespace std;
+int fact(int n)
+{
+    if (n==0)
+    {
+        return 1;
+    }
+    else
+    return n*fact(n-1);
+}
+int ncr(int n , int r)
+{
+    int t1,t2,t3,res;
+    if (n < 0 || r <0 || r >n)
+    {
+        return -1;
+    }
+    t1=fact(n);
+    t2=fact(r);
+    t3=fact(n-r);
+    res=t1/(t2*t3);
+    return res;
+}
+int main()
+{    
+    int res=0,n,r;
+    cout<<"welcome to ncr"<<endl;
+    cout<<"enter the numbers n and r respectively "<<endl;
+    cin>>n>>r;
+    res=ncr(n,r);
+    if(res==-1)
+    {
+        cout<<"enter valid values"<<endl;
+    }
+    else{
+    cout<<"the value of"<<n<<"C"<<r<<"is"<<res<<endl;
+    }
+    
+
+    return 0;
+}
